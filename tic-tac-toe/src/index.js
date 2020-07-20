@@ -50,6 +50,7 @@ class Game extends React.Component {
       history: [{
         squares: Array(9).fill(null),
       }],
+      squareNumber: [],
       stepNumber: 0,
       xIsnext: true,
     };
@@ -66,6 +67,7 @@ class Game extends React.Component {
       history: history.concat([{
         squares,
       }]),
+      // squareNumber: squareNumber.concat(i),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
     });
@@ -116,7 +118,7 @@ class Game extends React.Component {
   }
 }
 
-function calculateWinner(squares) {
+const calculateWinner = ((squares) => {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -134,6 +136,16 @@ function calculateWinner(squares) {
     }
   }
   return null;
+});
+
+const getColumn = (idx) => {
+  const columns = {
+    '0': [0, 3, 6],
+    '1': [1, 4, 7],
+    '2': [2, 5, 8]
+  }
+  
+  for (let key in property)
 }
 
 // ========================================
